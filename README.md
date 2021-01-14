@@ -27,17 +27,6 @@ The super resolution GAN models are experimented on combination of widely used b
 
 We used Python PIL library to downsample the images from 218x178 to 64x64, 32x32 i.e. high resolution and low resolution respectively. These are the low resolution images fed to the Generator model. Once fed into our model the generator takes the low resolution images as input and tries to identify the shape, colour and texture of objects in our images, generating a new fake image (called SR) based on what was learned from the LR images. These fake / generated images were then fed to the discriminator which also takes in the actual HR images as an input. Based on their quantitative values, discriminator classifies each image as fake (close to 0) or real (close to 1). For now, the discriminator model works fine in classifying between the SR images and the HR images. In the second phase, we are trying to improve generator training so that it performs better there by fooling discriminator. 
 
-##### High Resolution Image | Low Resolution Images | Super Resolution Images
-![](https://github.ccs.neu.edu/mounicasubramani/DS5500-Project-SRGAN/blob/master/Images/HR_Image.jpg)
-![](https://github.ccs.neu.edu/mounicasubramani/DS5500-Project-SRGAN/blob/master/Images/LR_Image.jpg)
-![](https://github.ccs.neu.edu/mounicasubramani/DS5500-Project-SRGAN/blob/master/Images/SR_Image.jpg)
-
-##### Image obtained at 1st Iteration
-![](https://github.ccs.neu.edu/mounicasubramani/DS5500-Project-SRGAN/blob/master/Images/0.jpeg)
-
-##### Image obtained at 100th Iteration
-![](https://github.ccs.neu.edu/mounicasubramani/DS5500-Project-SRGAN/blob/master/Images/100_cr.jpeg)
-
 #### REFERENCES
 
 [1]  C. Ledig,  L. Theis,  F. Husz ar,  J. Caballero,  A. Cunningham,A. Acosta,  A. Aitken,  A. Te- jani, J. Totz, Z. Wang, et al.Photo-realistic single image super-resolution using a gener-ative adversarial network.arXiv preprint arXiv:1609.04802,2016
