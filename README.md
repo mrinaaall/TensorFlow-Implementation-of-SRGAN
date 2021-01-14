@@ -19,14 +19,6 @@ First step of model optimization is migrating the implementation to cloud set up
 
 The  implementation  of  the  model  is  done  using  tensorflow’s  TFGAN  library  and  trained using TPU’s available on google cloud platform. 
 
-#### PRELIMINARY  RESULTS  AND  DATASETS
-
-![Image of Yaktocat](https://github.ccs.neu.edu/mounicasubramani/DS5500-Project-SRGAN/blob/master/Images/Fig%201%20Downsampling.png)
-
-The super resolution GAN models are experimented on combination of widely used benchmark dataset Celeb-A and on Indian Movie Face database (IMFDB). Celeb- A is a large-scale facial attributes dataset with 202,599 face images of 10,177 unique identities. The images are mostly frontal images and less occluded which might create a bias in the model. IMFDB is a large unconstrained face database consisting of 34512 images of 100 Indian actors collected from more than 100 videos. Unlike the Celeb-A dataset the faces in IMFDB are collected from videos collected from the last two decades by manual selection and cropping of video frames resulting in diversity in age, poses, dress patterns, expressions etc.
-
-We used Python PIL library to downsample the images from 218x178 to 64x64, 32x32 i.e. high resolution and low resolution respectively. These are the low resolution images fed to the Generator model. Once fed into our model the generator takes the low resolution images as input and tries to identify the shape, colour and texture of objects in our images, generating a new fake image (called SR) based on what was learned from the LR images. These fake / generated images were then fed to the discriminator which also takes in the actual HR images as an input. Based on their quantitative values, discriminator classifies each image as fake (close to 0) or real (close to 1). For now, the discriminator model works fine in classifying between the SR images and the HR images. In the second phase, we are trying to improve generator training so that it performs better there by fooling discriminator. 
-
 #### REFERENCES
 
 [1]  C. Ledig,  L. Theis,  F. Husz ar,  J. Caballero,  A. Cunningham,A. Acosta,  A. Aitken,  A. Te- jani, J. Totz, Z. Wang, et al.Photo-realistic single image super-resolution using a gener-ative adversarial network.arXiv preprint arXiv:1609.04802,2016
